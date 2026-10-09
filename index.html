@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A Little Surprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div id="fx" aria-hidden="true"></div>
+<div id="light" aria-hidden="true"></div>
+<div id="bigHeart" aria-hidden="true">❤️</div>
+<main id="app">
+
+<section class="screen" id="s1" aria-label="Password lock"><div class="wrap">
+  <div class="lockheart" aria-hidden="true">❤️</div>
+  <h1 class="glowtxt">A Little Surprise</h1>
+  <p class="hand">From <span class="me">Maazi</span></p>
+  <p class="hand">For <span class="her">Momo</span> ❤️</p>
+  <p class="hint">Enter your secret 4-digit code</p>
+  <div id="dots" role="img" aria-label="PIN entry, 0 of 4 digits"><i></i><i></i><i></i><i></i></div>
+  <div id="pad"></div>
+</div></section>
+
+<section class="screen" id="s2" aria-label="Wrong password"><div class="wrap">
+  <div class="big" id="sad" aria-hidden="true">🥺</div>
+  <h2>Wrong Password</h2>
+  <p class="lead">Awww <span class="her">Momo</span>... You forgot the secret?</p>
+  <p class="lead">Don't worry, try again ❤️</p>
+  <button class="btn" id="again">TRY AGAIN</button>
+</div></section>
+
+<section class="screen" id="s3" aria-label="Love letter"><div class="wrap">
+  <h2>A little letter for you 💌</h2>
+  <div id="envwrap"><button class="env" id="env" aria-label="Open the envelope"><span class="flap"></span><span class="front"></span><span class="seal">❤️</span></button></div>
+  <p class="hint" id="envhint">Tap the envelope to open it</p>
+  <article class="paper" id="paper" hidden>
+    <p>Dear <span class="her">Momo</span>,</p>
+    <p>There are some things that are difficult to say with words.</p>
+    <p>So I made this little surprise especially for you.</p>
+    <p>I wanted to collect a few beautiful memories and put them together in something special.</p>
+    <p>I hope these little memories make you smile and remind you of all the beautiful moments.</p>
+    <p>And this is only the beginning of the surprise... ❤️</p>
+    <p>With love,<br><span class="me">Maazi</span> ❤️</p>
+  </article>
+  <button class="btn" id="toMem" hidden>Open My Memories</button>
+</div></section>
+
+<section class="screen" id="s4" aria-label="Our memories"><div class="wrap">
+  <h2>Our Memories ❤️</h2>
+  <p class="lead">Scratch a little to reveal the picture</p>
+  <p class="count" id="mnum" aria-live="polite"></p>
+  <div id="mwrap"><div class="mframe" id="mframe"><img id="mimg" alt="A memory photo"><canvas id="cv" aria-label="Scratch area"></canvas></div></div>
+  <button class="lnk" id="skip">Can't scratch? Reveal it</button>
+  <div id="mcap"><h3 id="mt"></h3><p id="mx"></p><p id="mex" class="hand"></p></div>
+  <button class="btn" id="mnext" disabled>NEXT</button>
+</div></section>
+
+<section class="screen" id="s5" aria-label="One last surprise"><div class="wrap">
+  <div class="big" id="h5" aria-hidden="true">❤️</div>
+  <h2>One Last Surprise</h2>
+  <p class="lead">You have seen all our little memories.</p>
+  <p class="lead">But I saved many more surprises for you...</p>
+  <button class="btn" id="go5">Continue ✨</button>
+</div></section>
+
+<section class="screen" id="s6" aria-label="Countdown"><div class="wrap">
+  <p class="wait">WAIT FOR IT...</p>
+  <div id="pulse"><div id="num">10</div></div>
+</div></section>
+
+<section class="screen" id="s7" aria-label="Birthday"><div class="wrap">
+  <h1 id="hb1" class="glowtxt bigt">HAPPY BIRTHDAY</h1>
+  <h1 id="hb2" class="glowtxt bigt"><span class="her" data-up>MOMO</span>!</h1>
+  <p class="lead" id="hbs">You deserve all the happiness in the world 🌷</p>
+</div></section>
+
+<section class="screen" id="s8" aria-label="Cupcake"><div class="wrap">
+  <h2>A Sweet Treat For You</h2>
+  <p class="lead">Make a wish, <span class="her">Momo</span>... 🎂</p>
+  <div class="big" id="cup" aria-hidden="true">🧁</div>
+  <p class="wish" id="wish" aria-live="polite"></p>
+  <button class="btn" id="cut">CUT THE CUPCAKE ❤️</button>
+</div></section>
+
+<section class="screen" id="s9" aria-label="Balloons"><div class="wrap wide">
+  <h2>Pop The Balloons 🎈</h2>
+  <p class="lead">Every balloon has a little note of love for you.</p>
+  <p class="count" id="bcount" aria-live="polite">0 / 10 balloons popped</p>
+  <div class="sky" id="sky"></div>
+</div></section>
+
+<section class="screen" id="s10" aria-label="Gifts"><div class="wrap wide">
+  <h2>18 Special Gifts 🎁</h2>
+  <p class="lead">Tap every box to open your surprises</p>
+  <p class="count" id="gcount" aria-live="polite">0 / 18 gifts opened</p>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="screen" id="s11" aria-label="Final love message"><div class="wrap">
+  <h1 id="ily" class="glowtxt">I LOVE YOU</h1>
+  <h2 id="momo" class="glowtxt"><span class="her" data-up>MOMO</span></h2>
+  <div class="fl">
+    <p><span class="her">Momo</span>, I wish you could see yourself through my eyes for just one moment.</p>
+    <p>Maybe then you would understand how incredibly special you are to me.</p>
+    <p>Thank you for every smile, every laugh, every little moment and every memory.</p>
+    <p>You are one of the reasons some of my memories are beautiful.</p>
+    <p>I hope your life is filled with happiness, beautiful dreams and countless reasons to smile.</p>
+    <p>No matter how much time passes, I hope we always have beautiful moments worth remembering.</p>
+    <p>I Love You, <span class="her">Momo</span>. ❤️</p>
+  </div>
+  <p id="sig" class="sig">— <span class="me">Maazi</span></p>
+  <div id="endHeart" aria-hidden="true">❤️</div>
+</div></section>
+</main>
+
+<div id="top" aria-hidden="true"></div>
+<button id="music" aria-label="Toggle music" aria-pressed="false"><span>♪</span></button>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="mbox"><div id="mEmoji" aria-hidden="true"></div><h3 id="mTitle"></h3><p id="mText"></p><button class="btn" id="mClose">Close ❤️</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
